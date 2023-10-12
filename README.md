@@ -4,7 +4,7 @@ Terraform module to create Proxmox infra
 
 ## Limitations
 
-- Only supports a single node for all VMs
+- Only supports a single (proxmox) node for all VMs
 - It only launches VMs using Ubuntu 22.04
 
 <!-- markdownlint-disable MD033 -->
