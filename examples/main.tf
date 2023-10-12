@@ -17,7 +17,7 @@ module "example" {
   instances = {
     master = {
       tags       = ["master", "kubernetes"]
-      memory     = 6144
+      memory     = 2048
       vcpu       = 2
       disk_size  = 8
       ip_address = "172.31.85.11/24"
@@ -25,7 +25,7 @@ module "example" {
     }
     node01 = {
       tags       = ["node01", "kubernetes"]
-      memory     = 6144
+      memory     = 2048
       vcpu       = 2
       disk_size  = 8
       ip_address = "172.31.85.12/24"
@@ -33,11 +33,11 @@ module "example" {
     }
     node02 = {
       tags       = ["node02", "kubernetes"]
-      memory     = 6144
+      memory     = 2048
       vcpu       = 2
       disk_size  = 8
-      ip_address = "172.31.85.13/24"
-      gateway    = "172.31.85.1"
+      ip_address = "172.31.85.13/24" # if you omit ip_address, it will be assigned by dhcp. You can also omit gateway.
+      gateway    = "172.31.85.1"     # if you specify an ip_address, you must specify a gateway.
     }
   }
 }
