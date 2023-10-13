@@ -82,11 +82,11 @@ variable "network" {
   default     = null
   description = "Network configuration for the VM."
   validation {
-    condition     = var.network.ip_address != null ? var.network.gateway != null : true
+    condition     = var.network != null ? (var.network.ip_address != null ? var.network.gateway != null : true) : true
     error_message = "If ip_address is provided, gateway must also be provided."
   }
   validation {
-    condition     = var.network.ip_address != null ? can(regex("^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+/[0-9]+$", var.network.ip_address)) : true
+    condition     = var.network != null ? (var.network.ip_address != null ? can(regex("^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+/[0-9]+$", var.network.ip_address)) : true) : true
     error_message = "If ip_address is provided, it must have a CIDR suffix."
   }
 }
