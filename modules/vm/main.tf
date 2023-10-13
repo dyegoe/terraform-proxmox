@@ -12,7 +12,7 @@ data "template_file" "user_data" {
 resource "proxmox_virtual_environment_file" "cloud_config" {
   content_type = "snippets"
   datastore_id = "local"
-  node_name    = var.node
+  node_name    = var.node_name
 
   source_raw {
     data      = data.template_file.user_data.rendered
@@ -24,7 +24,7 @@ resource "proxmox_virtual_environment_vm" "this" {
   name        = var.name
   description = "Created by Terraform"
   tags        = concat(var.tags, ["terraform"])
-  node_name   = var.node
+  node_name   = var.node_name
 
   agent {
     enabled = true

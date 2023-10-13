@@ -47,7 +47,7 @@ No modules.
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory in gigabytes. | `number` | `0.5` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the VM. | `string` | n/a | yes |
 | <a name="input_network"></a> [network](#input\_network) | Network configuration for the VM. | <pre>object({<br>    ip_address = string<br>    gateway    = string<br>  })</pre> | `null` | no |
-| <a name="input_node"></a> [node](#input\_node) | Proxmox node name | `string` | `"pve"` | no |
+| <a name="input_node_name"></a> [node\_name](#input\_node\_name) | Proxmox node name | `string` | `"pve"` | no |
 | <a name="input_ssh_public_key"></a> [ssh\_public\_key](#input\_ssh\_public\_key) | The public key to add to the user's authorized\_keys file. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to add to the VM. | `list(string)` | `[]` | no |
 | <a name="input_user"></a> [user](#input\_user) | The user to create on the VM. | `string` | `"ubuntu"` | no |

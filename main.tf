@@ -1,7 +1,7 @@
 module "vms" {
   for_each       = var.vms
   source         = "./modules/vm"
-  node           = var.node
+  node_name      = var.node_name
   user           = var.user
   groups         = var.groups
   ssh_public_key = var.ssh_public_key

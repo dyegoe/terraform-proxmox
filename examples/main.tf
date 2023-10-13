@@ -8,7 +8,7 @@ provider "proxmox" {
 module "example" {
   source = "../."
 
-  node           = "pve"
+  node_name      = "pve"
   user           = "ubuntu"
   groups         = ["users", "admin"]
   ssh_public_key = var.ssh_public_key
