@@ -15,7 +15,6 @@ Terraform module to create Proxmox infra
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | 0.34.0 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | 2.2.0 |
 
 ## Providers
 
