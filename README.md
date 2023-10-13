@@ -48,5 +48,6 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_ipv4_addresses"></a> [ipv4\_addresses](#output\_ipv4\_addresses) | The IP addresses of the VMs. |
+| <a name="output_root_passwords"></a> [root\_passwords](#output\_root\_passwords) | A random password for the user root. |
 <!-- END_TF_DOCS -->
 <!-- markdownlint-enable MD033 -->
