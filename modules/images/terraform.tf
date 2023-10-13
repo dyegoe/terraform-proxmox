@@ -5,9 +5,5 @@ terraform {
       source  = "bpg/proxmox"
       version = "0.34.0"
     }
-    template = {
-      source  = "hashicorp/template"
-      version = "2.2.0"
-    }
   }
 }
