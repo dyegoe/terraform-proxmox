@@ -37,6 +37,7 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ip_addresses"></a> [ip\_addresses](#output\_ip\_addresses) | The IP addresses of the instances. |
+| <a name="output_ipv4_addresses"></a> [ipv4\_addresses](#output\_ipv4\_addresses) | The IP addresses of the instances. |
+| <a name="output_root_passwords"></a> [root\_passwords](#output\_root\_passwords) | Root passwords of the created VMs |
 <!-- END_TF_DOCS -->
 <!-- markdownlint-enable MD033 -->
