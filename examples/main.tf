@@ -12,7 +12,7 @@ module "example" {
   user           = "ubuntu"
   groups         = ["users", "admin"]
   ssh_public_key = var.ssh_public_key
-  domain         = "eugenio.local"
+  domain         = "example.local"
 
   vms = {
     master = {
