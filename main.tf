@@ -11,7 +11,7 @@ module "vms" {
   memory         = each.value.memory
   cpu            = each.value.cpu
   disk_size      = each.value.disk_size
-  network = can(each.value.ip_address) ? {
+  network = lookup(each.value, "ip_address", null) != null ? {
     ip_address = each.value.ip_address
     gateway    = each.value.gateway
   } : null
