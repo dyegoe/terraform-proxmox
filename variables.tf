@@ -1,7 +1,7 @@
 variable "node_name" {
   type        = string
   default     = "pve"
-  description = "Proxmox node name"
+  description = "Proxmox node name."
 }
 
 variable "user" {
@@ -49,7 +49,7 @@ variable "vms" {
   default     = {}
   description = <<EOT
 A map of VM names to VM configurations.
-memory in megabytes.
+memory in MB.
 disk_size in GB.
 ip_address is optional. If not provided, DHCP will be used. If provided, must have a CIDR suffix.
 EOT

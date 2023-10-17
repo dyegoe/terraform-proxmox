@@ -6,7 +6,6 @@ variable "proxmox_user" {
 
 variable "proxmox_password" {
   type        = string
-  default     = "password"
   description = "Proxmox password"
 }
 
