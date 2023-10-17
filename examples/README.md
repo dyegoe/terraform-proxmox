@@ -2,6 +2,21 @@
 
 Examples of how to use the Proxmox module.
 
+## Usage
+
+Export the following environment variables:
+
+```bash
+export TF_VAR_ssh_public_key="ssh-ed25519 AAAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export TF_VAR_proxmox_password="xxxxxxxxxxxx"
+```
+
+Then run the following commands:
+
+```bash
+make tfapply
+```
+
 <!-- markdownlint-disable MD033 -->
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

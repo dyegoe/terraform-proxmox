@@ -1,7 +1,7 @@
 variable "node_name" {
   type        = string
   default     = "pve"
-  description = "Proxmox node name"
+  description = "Proxmox node name."
 }
 
 variable "user" {
@@ -34,7 +34,7 @@ variable "domain" {
 variable "disk_image_id" {
   type        = string
   default     = "local:iso/jammy-server-cloudimg-amd64.img"
-  description = "The disk image to use for the VM. Must be a valid disk image ID. Download from URL using the proxmox UI."
+  description = "The disk image to use for the VM. Must be a valid disk image ID."
 }
 
 variable "name" {
@@ -53,7 +53,7 @@ variable "name" {
 variable "memory" {
   type        = number
   default     = 0.5
-  description = "Memory in gigabytes."
+  description = "Memory in MB."
 }
 
 variable "cpu" {
@@ -65,13 +65,7 @@ variable "cpu" {
 variable "disk_size" {
   type        = number
   default     = 8
-  description = "Disk size in gigabytes."
-}
-
-variable "tags" {
-  type        = list(string)
-  default     = []
-  description = "Tags to add to the VM."
+  description = "Disk size in GB."
 }
 
 variable "network" {
@@ -89,4 +83,10 @@ variable "network" {
     condition     = var.network != null ? (var.network.ip_address != null ? can(regex("^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+/[0-9]+$", var.network.ip_address)) : true) : true
     error_message = "If ip_address is provided, it must have a CIDR suffix."
   }
+}
+
+variable "tags" {
+  type        = list(string)
+  default     = []
+  description = "Tags to add to the VM."
 }
