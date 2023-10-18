@@ -2,9 +2,10 @@
 
 Terraform module to import images into Proxmox.
 
-## Limitations
+## Images
 
-- It currently has only Ubuntu 22.04
+- Ubuntu 22.04 cloud image
+- Ubuntu 23.10 cloud image
 
 <!-- markdownlint-disable MD033 -->
 <!-- BEGIN_TF_DOCS -->
