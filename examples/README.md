@@ -44,7 +44,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_proxmox_password"></a> [proxmox\_password](#input\_proxmox\_password) | Proxmox password | `string` | `"password"` | no |
+| <a name="input_proxmox_password"></a> [proxmox\_password](#input\_proxmox\_password) | Proxmox password | `string` | n/a | yes |
 | <a name="input_proxmox_user"></a> [proxmox\_user](#input\_proxmox\_user) | Proxmox user | `string` | `"root@pam"` | no |
 | <a name="input_ssh_public_key"></a> [ssh\_public\_key](#input\_ssh\_public\_key) | The public key to add to the user's authorized\_keys file. | `string` | n/a | yes |
 
