@@ -8,7 +8,7 @@ resource "proxmox_virtual_environment_file" "ubuntu22" {
   }
 }
 
-resource "proxmox_virtual_environment_file" "ubuntu23_10" {
+resource "proxmox_virtual_environment_file" "ubuntu2310" {
   content_type = "iso"
   datastore_id = "local"
   node_name    = var.node_name

@@ -2,9 +2,10 @@
 
 Terraform module to import images into Proxmox.
 
-## Limitations
+## Images
 
-- It currently has only Ubuntu 22.04
+- Ubuntu 22.04 cloud image
+- Ubuntu 23.10 cloud image
 
 <!-- markdownlint-disable MD033 -->
 <!-- BEGIN_TF_DOCS -->
@@ -30,7 +31,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [proxmox_virtual_environment_file.ubuntu22](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
-| [proxmox_virtual_environment_file.ubuntu23_10](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
+| [proxmox_virtual_environment_file.ubuntu2310](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
 
 ## Inputs
 
@@ -43,6 +44,6 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_ubuntu22"></a> [ubuntu22](#output\_ubuntu22) | Ubuntu 22.04 cloud image |
-| <a name="output_ubuntu23_10"></a> [ubuntu23\_10](#output\_ubuntu23\_10) | Ubuntu 23.10 cloud image |
+| <a name="output_ubuntu2310"></a> [ubuntu2310](#output\_ubuntu2310) | Ubuntu 23.10 cloud image |
 <!-- END_TF_DOCS -->
 <!-- markdownlint-enable MD033 -->

@@ -2,10 +2,6 @@
 
 Terraform module to create Proxmox VMs.
 
-## Limitations
-
-- It only launches VMs using Ubuntu 22.04
-
 <!-- markdownlint-disable MD033 -->
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
