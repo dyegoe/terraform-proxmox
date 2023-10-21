@@ -9,6 +9,7 @@ Terraform module to create Proxmox VMs.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | 4.17.0 |
 | <a name="requirement_htpasswd"></a> [htpasswd](#requirement\_htpasswd) | 1.0.4 |
 | <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | 0.34.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | 3.5.1 |
@@ -18,6 +19,7 @@ Terraform module to create Proxmox VMs.
 
 | Name | Version |
 |------|---------|
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.17.0 |
 | <a name="provider_htpasswd"></a> [htpasswd](#provider\_htpasswd) | 1.0.4 |
 | <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | 0.34.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.5.1 |
@@ -31,11 +33,13 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.17.0/docs/resources/record) | resource |
 | [htpasswd_password.this](https://registry.terraform.io/providers/loafoe/htpasswd/1.0.4/docs/resources/password) | resource |
 | [proxmox_virtual_environment_file.cloud_config](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
 | [proxmox_virtual_environment_vm.this](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_vm) | resource |
 | [random_password.salt](https://registry.terraform.io/providers/hashicorp/random/3.5.1/docs/resources/password) | resource |
 | [random_password.this](https://registry.terraform.io/providers/hashicorp/random/3.5.1/docs/resources/password) | resource |
+| [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.17.0/docs/data-sources/zone) | data source |
 | [template_file.user_data](https://registry.terraform.io/providers/hashicorp/template/2.2.0/docs/data-sources/file) | data source |
 
 ## Inputs
@@ -43,6 +47,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of virtual CPUs. | `number` | `1` | no |
+| <a name="input_create_cloudflare_record"></a> [create\_cloudflare\_record](#input\_create\_cloudflare\_record) | Whether to create a Cloudflare DNS record for the VM. | `bool` | `false` | no |
 | <a name="input_disk_image_id"></a> [disk\_image\_id](#input\_disk\_image\_id) | The disk image to use for the VM. Must be a valid disk image ID. | `string` | `"local:iso/jammy-server-cloudimg-amd64.img"` | no |
 | <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | Disk size in GB. | `number` | `8` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | The domain to use for the VM. | `string` | `"example.com"` | no |
