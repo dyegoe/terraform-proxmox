@@ -6,6 +6,9 @@ endif
 ifndef TF_VAR_proxmox_password
 $(error TF_VAR_proxmox_password is not set. Please export TF_VAR_proxmox_password=<your_password>)
 endif
+ifndef TF_VAR_cloudflare_api_token
+$(error TF_VAR_cloudflare_api_token is not set. Please export TF_VAR_cloudflare_api_token=<your_token>)
+endif
 
 TFNAME := example
 TFMSG := example

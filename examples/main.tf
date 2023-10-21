@@ -5,14 +5,19 @@ provider "proxmox" {
   insecure = true
 }
 
+provider "cloudflare" {
+  api_token = var.cloudflare_api_token
+}
+
 module "example" {
   source = "../."
 
-  node_name      = "pve"
-  user           = "ubuntu"
-  groups         = ["users", "admin"]
-  ssh_public_key = var.ssh_public_key
-  domain         = "example.local"
+  node_name                = "pve"
+  user                     = "ubuntu"
+  groups                   = ["users", "admin"]
+  ssh_public_key           = var.ssh_public_key
+  domain                   = "example.local"
+  create_cloudflare_record = true
 
   vms = {
     master = {

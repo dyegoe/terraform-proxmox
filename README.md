@@ -32,6 +32,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_create_cloudflare_record"></a> [create\_cloudflare\_record](#input\_create\_cloudflare\_record) | Whether to create a Cloudflare DNS record for the VM. | `bool` | `false` | no |
 | <a name="input_disk_image_id"></a> [disk\_image\_id](#input\_disk\_image\_id) | The disk image to use for the VMs. Must be a valid disk image ID. Download from URL using the proxmox UI. | `string` | `"local:iso/jammy-server-cloudimg-amd64.img"` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | The domain to use for the VMs. | `string` | `"example.com"` | no |
 | <a name="input_groups"></a> [groups](#input\_groups) | The groups to add the user to. | `list(string)` | <pre>[<br>  "users",<br>  "admin"<br>]</pre> | no |

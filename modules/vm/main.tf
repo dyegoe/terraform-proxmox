@@ -96,7 +96,7 @@ resource "cloudflare_record" "this" {
   zone_id    = data.cloudflare_zone.this[0].id
   name       = var.name
   type       = "A"
-  value      = element(sort(setsubtract(proxmox_virtual_environment_vm.this.ipv4_addresses, [null, "127.0.0.1"])), 0)
+  value      = element(sort(setsubtract(flatten(proxmox_virtual_environment_vm.this.ipv4_addresses), [null, "127.0.0.1"])), 0)
   ttl        = 60
   depends_on = [proxmox_virtual_environment_vm.this]
 }
