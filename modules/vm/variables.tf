@@ -31,6 +31,12 @@ variable "domain" {
   }
 }
 
+variable "create_cloudflare_record" {
+  type        = bool
+  default     = false
+  description = "Whether to create a Cloudflare DNS record for the VM."
+}
+
 variable "disk_image_id" {
   type        = string
   default     = "local:iso/jammy-server-cloudimg-amd64.img"

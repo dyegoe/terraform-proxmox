@@ -85,3 +85,18 @@ resource "proxmox_virtual_environment_vm" "this" {
     bridge = "vmbr0"
   }
 }
+
+data "cloudflare_zone" "this" {
+  count = var.create_cloudflare_record ? 1 : 0
+  name  = var.domain
+}
+
+resource "cloudflare_record" "this" {
+  count      = var.create_cloudflare_record ? 1 : 0
+  zone_id    = data.cloudflare_zone.this[0].id
+  name       = var.name
+  type       = "A"
+  value      = element(sort(setsubtract(proxmox_virtual_environment_vm.this.ipv4_addresses, [null, "127.0.0.1"])), 0)
+  ttl        = 60
+  depends_on = [proxmox_virtual_environment_vm.this]
+}
