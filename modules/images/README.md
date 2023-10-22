@@ -30,20 +30,22 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [proxmox_virtual_environment_file.ubuntu22](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
+| [proxmox_virtual_environment_file.ubuntu2204](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
 | [proxmox_virtual_environment_file.ubuntu2310](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_enable_ubuntu2204"></a> [enable\_ubuntu2204](#input\_enable\_ubuntu2204) | Enable Ubuntu 22.04 | `bool` | n/a | yes |
+| <a name="input_enable_ubuntu2310"></a> [enable\_ubuntu2310](#input\_enable\_ubuntu2310) | Enable Ubuntu 23.10 | `bool` | n/a | yes |
 | <a name="input_node_name"></a> [node\_name](#input\_node\_name) | Proxmox node name | `string` | `"pve"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ubuntu22"></a> [ubuntu22](#output\_ubuntu22) | Ubuntu 22.04 cloud image |
+| <a name="output_ubuntu2204"></a> [ubuntu2204](#output\_ubuntu2204) | Ubuntu 22.04 cloud image |
 | <a name="output_ubuntu2310"></a> [ubuntu2310](#output\_ubuntu2310) | Ubuntu 23.10 cloud image |
 <!-- END_TF_DOCS -->
 <!-- markdownlint-enable MD033 -->
