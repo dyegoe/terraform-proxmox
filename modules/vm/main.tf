@@ -87,14 +87,14 @@ resource "proxmox_virtual_environment_vm" "this" {
 }
 
 data "cloudflare_zone" "this" {
-  count = var.create_cloudflare_record ? 1 : 0
-  name  = var.domain
+  count = var.dns_record ? 1 : 0
+  name  = var.cloudflare_zone
 }
 
 resource "cloudflare_record" "this" {
-  count      = var.create_cloudflare_record ? 1 : 0
+  count      = var.dns_record ? 1 : 0
   zone_id    = data.cloudflare_zone.this[0].id
-  name       = var.name
+  name       = "${var.name}.${var.domain}."
   type       = "A"
   value      = element(sort(setsubtract(flatten(proxmox_virtual_environment_vm.this.ipv4_addresses), [null, "127.0.0.1"])), 0)
   ttl        = 60
