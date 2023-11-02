@@ -52,6 +52,7 @@ resource "proxmox_virtual_environment_vm" "this" {
 
   cpu {
     cores = var.cpu
+    type  = "x86-64-v2-AES"
   }
 
   disk {
@@ -59,6 +60,16 @@ resource "proxmox_virtual_environment_vm" "this" {
     file_id      = var.disk_image_id
     interface    = "scsi0"
     size         = var.disk_size
+  }
+
+  dynamic "disk" {
+    for_each = { for i, v in var.additional_disks : i => v }
+    content {
+      datastore_id = "local-lvm"
+      interface    = "scsi${disk.key + 1}"
+      size         = disk.value.size
+      file_format  = "raw"
+    }
   }
 
   initialization {
@@ -96,7 +107,7 @@ resource "cloudflare_record" "this" {
   zone_id    = data.cloudflare_zone.this[0].id
   name       = "${var.name}.${var.domain}."
   type       = "A"
-  value      = element(sort(setsubtract(flatten(proxmox_virtual_environment_vm.this.ipv4_addresses), [null, "127.0.0.1"])), 0)
+  value      = element(flatten(element(proxmox_virtual_environment_vm.this.ipv4_addresses, 1)), 0)
   ttl        = 60
   depends_on = [proxmox_virtual_environment_vm.this]
 }

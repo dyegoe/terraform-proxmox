@@ -73,7 +73,15 @@ variable "cpu" {
 variable "disk_size" {
   type        = number
   default     = 8
-  description = "The size of the disk to allocate to the VM in GB."
+  description = "The size of the root disk to allocate to the VM in GB."
+}
+
+variable "additional_disks" {
+  type = list(object({
+    size = number
+  }))
+  default     = []
+  description = "Additional disks to add to the VM. Each disk must have a size in GB."
 }
 
 variable "network" {
