@@ -15,6 +15,7 @@ TFMSG := example
 
 INIT_FILES := .terraform .terraform.lock.hcl
 PLAN_FILES := $(TFNAME).tfplan
+EXTRA_FILES := *.tfstate *.tfstate.* *.tfvars *tfplan*
 
 $(INIT_FILES):
 	@$(call msg_tfinit_start,$(TFMSG))
@@ -58,6 +59,7 @@ clean-plan: ## clean plan files
 	@rm -f $(PLAN_FILES)
 
 clean: clean-init clean-plan ## clean init and plan files
+	@rm -f $(EXTRA_FILES)
 	@$(call msg_clean_end,$(TFMSG))
 
 .DEFAULT_GOAL := tfapply
