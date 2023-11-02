@@ -46,13 +46,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of virtual CPUs. | `number` | `1` | no |
-| <a name="input_create_cloudflare_record"></a> [create\_cloudflare\_record](#input\_create\_cloudflare\_record) | Whether to create a Cloudflare DNS record for the VM. | `bool` | `false` | no |
-| <a name="input_disk_image_id"></a> [disk\_image\_id](#input\_disk\_image\_id) | The disk image to use for the VM. Must be a valid disk image ID. | `string` | `"local:iso/jammy-server-cloudimg-amd64.img"` | no |
-| <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | Disk size in GB. | `number` | `8` | no |
-| <a name="input_domain"></a> [domain](#input\_domain) | The domain to use for the VM. | `string` | `"example.com"` | no |
+| <a name="input_additional_disks"></a> [additional\_disks](#input\_additional\_disks) | Additional disks to add to the VM. Each disk must have a size in GB. | <pre>list(object({<br>    size = number<br>  }))</pre> | `[]` | no |
+| <a name="input_cloudflare_zone"></a> [cloudflare\_zone](#input\_cloudflare\_zone) | The Cloudflare zone to create DNS records in. | `string` | n/a | yes |
+| <a name="input_cpu"></a> [cpu](#input\_cpu) | The number of virtual CPUs to allocate on the VM. | `number` | `1` | no |
+| <a name="input_disk_image_id"></a> [disk\_image\_id](#input\_disk\_image\_id) | The disk image to use for the VMs. Must be a valid disk image ID. Download from URL using the proxmox UI. | `string` | `"local:iso/jammy-server-cloudimg-amd64.img"` | no |
+| <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | The size of the root disk to allocate to the VM in GB. | `number` | `8` | no |
+| <a name="input_dns_record"></a> [dns\_record](#input\_dns\_record) | Whether to create a Cloudflare DNS record for the VM. | `bool` | `false` | no |
+| <a name="input_domain"></a> [domain](#input\_domain) | The domain to use for the VM. | `string` | n/a | yes |
 | <a name="input_groups"></a> [groups](#input\_groups) | The groups to add the user to. | `list(string)` | <pre>[<br>  "users",<br>  "admin"<br>]</pre> | no |
-| <a name="input_memory"></a> [memory](#input\_memory) | Memory in MB. | `number` | `0.5` | no |
+| <a name="input_memory"></a> [memory](#input\_memory) | The amount of memory to allocate on the VM in MB. | `number` | `0.5` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the VM. | `string` | n/a | yes |
 | <a name="input_network"></a> [network](#input\_network) | Network configuration for the VM. | <pre>object({<br>    ip_address = string<br>    gateway    = string<br>  })</pre> | `null` | no |
 | <a name="input_node_name"></a> [node\_name](#input\_node\_name) | Proxmox node name. | `string` | `"pve"` | no |
