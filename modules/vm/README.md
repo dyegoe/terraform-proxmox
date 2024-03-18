@@ -9,21 +9,21 @@ Terraform module to create Proxmox VMs.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | 4.17.0 |
-| <a name="requirement_htpasswd"></a> [htpasswd](#requirement\_htpasswd) | 1.0.4 |
-| <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | 0.34.0 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | 3.5.1 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | 2.2.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | >= 4.26.0 |
+| <a name="requirement_htpasswd"></a> [htpasswd](#requirement\_htpasswd) | >= 1.0.4 |
+| <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | >= 0.49.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.6.0 |
+| <a name="requirement_template"></a> [template](#requirement\_template) | >= 2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.17.0 |
-| <a name="provider_htpasswd"></a> [htpasswd](#provider\_htpasswd) | 1.0.4 |
-| <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | 0.34.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.5.1 |
-| <a name="provider_template"></a> [template](#provider\_template) | 2.2.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | >= 4.26.0 |
+| <a name="provider_htpasswd"></a> [htpasswd](#provider\_htpasswd) | >= 1.0.4 |
+| <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | >= 0.49.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | >= 3.6.0 |
+| <a name="provider_template"></a> [template](#provider\_template) | >= 2.2.0 |
 
 ## Modules
 
@@ -33,14 +33,14 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.17.0/docs/resources/record) | resource |
-| [htpasswd_password.this](https://registry.terraform.io/providers/loafoe/htpasswd/1.0.4/docs/resources/password) | resource |
-| [proxmox_virtual_environment_file.cloud_config](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_file) | resource |
-| [proxmox_virtual_environment_vm.this](https://registry.terraform.io/providers/bpg/proxmox/0.34.0/docs/resources/virtual_environment_vm) | resource |
-| [random_password.salt](https://registry.terraform.io/providers/hashicorp/random/3.5.1/docs/resources/password) | resource |
-| [random_password.this](https://registry.terraform.io/providers/hashicorp/random/3.5.1/docs/resources/password) | resource |
-| [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.17.0/docs/data-sources/zone) | data source |
-| [template_file.user_data](https://registry.terraform.io/providers/hashicorp/template/2.2.0/docs/data-sources/file) | data source |
+| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [htpasswd_password.this](https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password) | resource |
+| [proxmox_virtual_environment_file.cloud_config](https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_file) | resource |
+| [proxmox_virtual_environment_vm.this](https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_vm) | resource |
+| [random_password.salt](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
+| [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
+| [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone) | data source |
+| [template_file.user_data](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
