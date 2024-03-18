@@ -3,23 +3,23 @@ terraform {
   required_providers {
     proxmox = {
       source  = "bpg/proxmox"
-      version = "0.34.0"
+      version = ">= 0.49.0"
     }
     template = {
       source  = "hashicorp/template"
-      version = "2.2.0"
+      version = ">= 2.2.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.5.1"
+      version = ">= 3.6.0"
     }
     htpasswd = {
       source  = "loafoe/htpasswd"
-      version = "1.0.4"
+      version = ">= 1.0.4"
     }
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = "4.17.0"
+      version = ">= 4.26.0"
     }
   }
 }

@@ -36,10 +36,11 @@ resource "proxmox_virtual_environment_file" "cloud_config" {
 }
 
 resource "proxmox_virtual_environment_vm" "this" {
-  name        = var.name
-  description = "Created by Terraform"
-  tags        = concat(var.tags, ["terraform"])
-  node_name   = var.node_name
+  name            = var.name
+  description     = "Created by Terraform"
+  tags            = concat(var.tags, ["terraform"])
+  node_name       = var.node_name
+  stop_on_destroy = true
 
   agent {
     enabled = true
