@@ -52,8 +52,9 @@ resource "proxmox_virtual_environment_vm" "this" {
   }
 
   cpu {
-    cores = var.cpu
-    type  = "x86-64-v2-AES"
+    cores        = var.cpu
+    type         = "x86-64-v2-AES"
+    architecture = "x86_64"
   }
 
   disk {
