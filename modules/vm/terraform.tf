@@ -3,7 +3,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "bpg/proxmox"
-      version = ">= 0.49.0"
+      version = ">= 0.65.0"
     }
     template = {
       source  = "hashicorp/template"
